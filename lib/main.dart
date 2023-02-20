@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_color_scheme_selector/theme.dart';
 
@@ -42,6 +43,16 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
+  Container _colorItem(FlexScheme scheme) {
+    return Container(
+      height: 40,
+      width: double.infinity,
+      margin: const EdgeInsets.all(16),
+      color: FlexColorScheme.light(scheme: scheme).primary,
+      child: Center(child: Text(scheme.toString().split('.').last)),
+    );
+  }
+
   ListView _body(BuildContext context) {
     final cc = Theme.of(context).colorScheme;
 
@@ -59,6 +70,32 @@ class MyHomePage extends StatelessWidget {
         _item(cc.surface, cc.onSurface, 'surface'),
         _item(cc.inverseSurface, cc.onInverseSurface, 'inverseSurface'),
         _item(cc.surfaceVariant, cc.onSurfaceVariant, 'surfaceVariant'),
+
+        // _colorItem(FlexScheme.aquaBlue),
+        // _colorItem(FlexScheme.sakura),
+        // _colorItem(FlexScheme.materialBaseline),
+        // _colorItem(FlexScheme.shark),
+        // _colorItem(FlexScheme.indigo),
+        // _colorItem(FlexScheme.mandyRed),
+        // _colorItem(FlexScheme.deepPurple),
+        // _colorItem(FlexScheme.bigStone),
+        // _colorItem(FlexScheme.outerSpace),
+        // _colorItem(FlexScheme.blueWhale),
+        // _colorItem(FlexScheme.sanJuanBlue),
+        // _colorItem(FlexScheme.blumineBlue),
+        // _colorItem(FlexScheme.flutterDash),
+        // _colorItem(FlexScheme.damask),
+        // _colorItem(FlexScheme.bahamaBlue),
+        // _colorItem(FlexScheme.blue),
+        // _colorItem(FlexScheme.hippieBlue),
+        // _colorItem(FlexScheme.brandBlue),
+        // _colorItem(FlexScheme.deepBlue),
+        // _colorItem(FlexScheme.red),
+        // _colorItem(FlexScheme.redWine),
+        // _colorItem(FlexScheme.green),
+        // _colorItem(FlexScheme.jungle),
+        // _colorItem(FlexScheme.ebonyClay),
+        // _colorItem(FlexScheme.dellGenoa),
       ],
     );
   }
